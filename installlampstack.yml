@@ -16,7 +16,7 @@
        apt:
         name: libapache2-mod-php
         status: present
-     - name  : install my sql 
+     - name: install my sql 
        apt: 
           name: php-mysql
           status: present
