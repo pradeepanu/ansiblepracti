@@ -4,24 +4,24 @@
   become: true
   tasks: 
     - name: apache install
-      package:
+      apt:
         name: apache2
         status: present
         update_cache: yes
     - name: install php
-      package: 
+      apt: 
         name: php
         status: present
     - name: install librares 
-      package:
+      apt:
         name: libapache2-mod-php
         status: present
     - name : install my sql 
-      package: 
+      apt: 
         name: php-mysql
         status: present
     - name: install cli 
-      package:
+      apt:
         name: php-cli
         status: present
     - name: copy info php
