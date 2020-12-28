@@ -1,0 +1,31 @@
+---
+- name: install Lamp stack
+  hosts: all
+  become: true
+  tasks: 
+    - name: apache install
+      package:
+        name: apache2
+        status: present
+        update_cache: yes
+    - name: install php
+      package: 
+        name: php
+        status: present
+    - name: install librares 
+      package:
+        name: libapache2-mod-php
+        status: present
+    - name : install my sql 
+      package: 
+        name: php-mysql
+        status: present
+    - name: install cli 
+      package:
+        name: php-cli
+        status: present
+    - name: copy info php
+      copy:
+        src:  info.php
+        dest: /var/www/html/info.php   
+      

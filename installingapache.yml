@@ -6,5 +6,5 @@
     - name : yaml to install apache
       apt:
         name: apache2
-        state: restarted
+        state: present
         update_cache: yes
