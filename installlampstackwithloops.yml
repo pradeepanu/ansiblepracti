@@ -1,0 +1,19 @@
+---
+- name: installing lampstack using loops
+  hosts: all
+  become: yes
+  tasks: 
+    - name: install apache
+      apt: 
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: install php
+      apt: 
+        name: "{{ items }}"
+        state: present
+      loop: "{{ install_php }}"
+    - name: copy echo
+      copy: 
+        src:  info.php
+        dest: /var/www/html/info.php
