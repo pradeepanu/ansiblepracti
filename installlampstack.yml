@@ -3,29 +3,29 @@
   hosts: all
   become: true
   tasks: 
-    - name: apache install
-      apt:
-        name: apache2
-        status: present
-        update_cache: yes
-    - name: install php
-      apt: 
-        name: php
-        status: present
-    - name: install librares 
-      apt:
+     - name: install apache 
+       apt: 
+         name : apache2
+         state: present
+         update_cache: yes
+     - name: install php
+       apt:
+         name: php
+         state: present
+     - name: install librares 
+       apt:
         name: libapache2-mod-php
         status: present
-    - name : install my sql 
-      apt: 
-        name: php-mysql
-        status: present
-    - name: install cli 
-      apt:
-        name: php-cli
-        status: present
-    - name: copy info php
-      copy:
+     - name  : install my sql 
+       apt: 
+          name: php-mysql
+          status: present
+     - name: install cli 
+       apt:
+         name: php-cli
+         status: present
+     - name: copy info php
+       copy:
         src:  info.php
         dest: /var/www/html/info.php   
       
