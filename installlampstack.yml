@@ -15,15 +15,15 @@
      - name: install librares 
        apt:
         name: libapache2-mod-php
-        status: present
+        state: present
      - name: install my sql 
        apt: 
           name: php-mysql
-          status: present
+          state: present
      - name: install cli 
        apt:
          name: php-cli
-         status: present
+         state: present
      - name: copy info php
        copy:
         src:  info.php
